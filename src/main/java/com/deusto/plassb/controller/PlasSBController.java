@@ -1,10 +1,11 @@
-package plassb.controller;
+package com.deusto.plassb.controller;
 
-import plassb.entity.Disponibilidad;
-import plassb.repository.DisponibilidadRepository;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import com.deusto.plassb.entity.Disponibilidad;
+import com.deusto.plassb.repository.DisponibilidadRepository;
 
 import java.time.LocalDate;
 import java.util.Map;

@@ -1,4 +1,4 @@
-package plassb.entity;
+package com.deusto.plassb.entity;
 
 import jakarta.persistence.*;
 import java.time.LocalDate;
