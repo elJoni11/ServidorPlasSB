@@ -4,34 +4,41 @@ import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import com.deusto.plassb.entity.Disponibilidad;
-import com.deusto.plassb.repository.DisponibilidadRepository;
+import com.deusto.plassb.service.PlasSBService;
+import com.deusto.plassb.dto.CapacidadResponseDTO;
 
 import java.time.LocalDate;
-import java.util.Map;
 
 @RestController
-@RequestMapping("/api/v1/plassb")
+@RequestMapping("/api/plassb")
 public class PlasSBController {
 
-    private final DisponibilidadRepository repository;
+	private final PlasSBService service;
 
-    public PlasSBController(DisponibilidadRepository repository) {
-        this.repository = repository;
+    public PlasSBController(PlasSBService service) {
+        this.service = service;
     }
 
     @GetMapping("/capacidad")
-    public ResponseEntity<?> getCapacidad(
+    public ResponseEntity<CapacidadResponseDTO> getCapacidad(
             @RequestParam("fecha") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate fecha) {
         
-        System.out.println("--> PlasSB recibiendo petición para fecha: " + fecha);
+        System.out.println("--> PlasSB Controller: Petición recibida para fecha " + fecha);
 
-        return repository.findByFecha(fecha)
-                .map(d -> ResponseEntity.ok(Map.of(
-                        "planta", "PlasSB Ltd.",
-                        "fecha", d.getFecha(),
-                        "capacidadDisponible", d.getCapacidadToneladas()
-                )))
-                .orElseGet(() -> ResponseEntity.notFound().build());
+        return service.consultarCapacidad(fecha)
+                .map(capacidad -> {
+                    // Mapeamos la Entidad Capacidad al DTO de respuesta
+                    CapacidadResponseDTO dto = new CapacidadResponseDTO();
+                    dto.setPlantaID("PlasSB Ltd.");
+                    dto.setFecha(capacidad.getFecha());
+                    dto.setCapacidadTotal(capacidad.getCapacidadTotal());
+                    dto.setCapacidadDisponible(capacidad.getCapacidadDisponible());
+                    dto.setUnidad(capacidad.getUnidad());
+                    return ResponseEntity.ok(dto);
+                })
+                .orElseGet(() -> {
+                    System.out.println("--> PlasSB Controller: Fecha no encontrada -> 404");
+                    return ResponseEntity.notFound().build();
+                });
     }
 }
