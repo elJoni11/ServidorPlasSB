@@ -5,11 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
 /**
- * Servidor PlasSB - Prototipo 2
-
- * REST API para gestión de capacidades de planta de reciclaje.
-
- * Características:
+ Características:
  * - Puerto: 8081
  * - Base de datos: H2 en memoria
  * - Swagger UI: http://localhost:8081/swagger-ui.html
