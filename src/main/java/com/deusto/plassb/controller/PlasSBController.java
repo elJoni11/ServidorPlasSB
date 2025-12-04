@@ -18,7 +18,7 @@ public class PlasSBController {
     public PlasSBController(PlasSBService service) {
         this.service = service;
     }
-
+    
     @GetMapping("/capacidad")
     public ResponseEntity<CapacidadResponseDTO> getCapacidad(
             @RequestParam("fecha") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate fecha) {

@@ -6,9 +6,9 @@ import org.springframework.context.annotation.ComponentScan;
 
 /**
  * Servidor PlasSB - Prototipo 2
- * 
+
  * REST API para gestión de capacidades de planta de reciclaje.
- * 
+
  * Características:
  * - Puerto: 8081
  * - Base de datos: H2 en memoria
@@ -25,9 +25,9 @@ public class ServidorPlasSbApplication {
 
 	public static void main(String[] args) {
 		System.out.println("═══════════════════════════════════════════════════════════");
-		System.out.println("   SERVIDOR PLASSB - PROTOTIPO 2");
-		System.out.println("   Sistema de Gestión de Reciclaje de Plásticos");
-		System.out.println("   Equipo DS-03 - Universidad de Deusto");
+		System.out.println("   					SERVIDOR PLASSB");
+		System.out.println("   		Sistema de Gestión de Reciclaje de Envases");
+		System.out.println("   			Equipo DS-03 - Universidad de Deusto");
 		System.out.println("═══════════════════════════════════════════════════════════");
 		
 		SpringApplication.run(ServidorPlasSbApplication.class, args);
