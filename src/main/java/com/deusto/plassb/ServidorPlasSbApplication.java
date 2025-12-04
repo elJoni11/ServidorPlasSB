@@ -2,6 +2,7 @@ package com.deusto.plassb;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.ComponentScan;
 
 /**
  * Servidor PlasSB - Prototipo 2
@@ -13,17 +14,13 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * - Base de datos: H2 en memoria
  * - Swagger UI: http://localhost:8081/swagger-ui.html
  * - H2 Console: http://localhost:8081/h2-console
- * 
- * API REST según especificación PDF Prototipo 2:
- * - GET /api/v1/plassb/capacidad?fecha=YYYY-MM-DD
- * - POST /api/v1/plassb/notificacion
- * - GET /api/v1/plassb/estado
- * - PUT /api/v1/plassb/capacidad
- * 
- * @author Equipo DS-03
- * @version Prototipo 2
- */
+ **/
+
 @SpringBootApplication
+@ComponentScan(basePackages = {
+		"com.deusto.plassb",
+		"com.deusto.plassb.controller"})
+
 public class ServidorPlasSbApplication {
 
 	public static void main(String[] args) {
