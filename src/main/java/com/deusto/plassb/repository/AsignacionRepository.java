@@ -11,9 +11,8 @@ import java.util.Optional;
 
 /**
  * Repositorio JPA para la entidad Asignacion.
- * 
- * @author Equipo DS-03
- */
+ **/
+
 @Repository
 public interface AsignacionRepository extends JpaRepository<Asignacion, Long> {
     

@@ -4,9 +4,8 @@ import java.time.LocalDate;
 
 /**
  * DTO para la respuesta de consulta de capacidad.
- * 
- * @author Equipo DS-03
- */
+ **/
+
 public class CapacidadResponseDTO {
     
     private String plantaID = "PLASSB01";

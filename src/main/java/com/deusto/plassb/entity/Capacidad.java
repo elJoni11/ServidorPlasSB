@@ -4,13 +4,11 @@ import jakarta.persistence.*;
 import java.time.LocalDate;
 
 /**
- * Entidad JPA que representa la capacidad diaria disponible
- * de la planta PlasSB para procesar residuos plásticos.
+ * Entidad JPA que representa la capacidad diaria disponible de la planta PlasSB para procesar envases.
  * 
  * Almacenada en base de datos H2 en memoria.
- * 
- * @author Equipo DS-03
- */
+ **/
+
 @Entity
 @Table(name = "capacidades")
 public class Capacidad {

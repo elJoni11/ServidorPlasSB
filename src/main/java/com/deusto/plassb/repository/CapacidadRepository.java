@@ -10,9 +10,8 @@ import java.util.Optional;
 
 /**
  * Repositorio JPA para la entidad Capacidad.
- * 
- * @author Equipo DS-03
- */
+ **/
+
 @Repository
 public interface CapacidadRepository extends JpaRepository<Capacidad, Long> {
     

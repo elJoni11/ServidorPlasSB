@@ -14,9 +14,8 @@ import java.util.Optional;
 
 /**
  * Servicio con lógica de negocio para PlasSB.
- * 
- * @author Equipo DS-03
- */
+ **/
+
 @Service
 public class PlasSBService {
     

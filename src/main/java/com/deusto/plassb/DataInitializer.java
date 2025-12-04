@@ -11,9 +11,8 @@ import java.time.LocalDate;
 /**
  * Inicializador de datos para la base de datos H2.
  * Se ejecuta automáticamente al arrancar.
- * 
- * @author Equipo DS-03
- */
+ **/
+
 @Component
 public class DataInitializer implements CommandLineRunner {
     

@@ -2,9 +2,8 @@ package com.deusto.plassb.dto;
 
 /**
  * DTO para la respuesta de notificación.
- * 
- * @author Equipo DS-03
- */
+ **/
+
 public class NotificacionResponseDTO {
     
     private String mensaje;

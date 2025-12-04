@@ -6,11 +6,9 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 /**
- * Entidad JPA que representa una asignación de contenedores
- * notificada por el Servidor Ecoembes.
- * 
- * @author Equipo DS-03
- */
+ * Entidad JPA que representa una asignación de contenedores notificada por el Servidor Ecoembes.
+ **/
+
 @Entity
 @Table(name = "asignaciones")
 public class Asignacion {

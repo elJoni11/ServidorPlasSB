@@ -6,9 +6,7 @@ import java.util.List;
 
 /**
  * DTO para recibir notificación de asignación.
- * 
- * @author Equipo DS-03
- */
+ **/
 public class NotificacionRequestDTO {
     
     private String asignacionID;
